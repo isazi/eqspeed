@@ -1,0 +1,45 @@
+{
+  "name": "eqSPEED",
+  "version": "1.0",
+  "author": "Alessio Sclocco",
+  "description": "Carlo's eqSPEED",
+  "type": "feature",
+  "usage": "workout",
+  "modificationTime": 1657565915,
+  "in": [
+    {
+      "name": "duration",
+      "source": "Activity/Move/-1/Duration/Current",
+      "type": "subscribe"
+    },
+    {
+      "name": "distance",
+      "source": "Activity/Move/-1/Distance/Current",
+      "type": "subscribe"
+    },
+    {
+      "name": "ascent",
+      "source": "Activity/Move/-1/Ascent/Current",
+      "type": "subscribe"
+    }
+  ],
+  "out": [
+    {
+      "name": "eqSPEED"
+    }
+  ],
+  "template": [
+    {
+      "name": "template-s.html"
+    },
+    {
+      "name": "template-m.html"
+    },
+    {
+      "name": "template-n.html"
+    },
+    {
+      "name": "template-l.html"
+    }
+  ]
+}

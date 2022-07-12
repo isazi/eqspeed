@@ -1,0 +1,21 @@
+<!-- SuuntoPlus: Large display -->
+<uiView>
+
+  <div id="suuntoplus">
+
+    <!-- Topmost: title field -->
+    <div class="cm-fg" style="width:100%;height:56px;">
+      <div id="z{zapp_index}-v{view_index}-t0" style="top:16px;left:calc(50% - 50%e);font-size:25px;max-height:34px;max-width:170px;">eqSPEED</div>
+    </div>
+
+    <!-- center -->
+    <div id="z-c-desc" style="top:calc(35% - 50%e);left:calc(50% - 50%e);font-size:18px;">
+      eqSPEED
+    </div>
+    <div id="z-c-val" style="top:calc(49% - 50%e);left:calc(50% - 50%e);font-size:80px;font-family:monospace numbers;">
+      <eval input="/Zapp/{zapp_index}/Output/eqSPEED" outputFormat="Speed_Threedigits" default="--" />
+    </div>
+
+  </div>
+
+</uiView>
