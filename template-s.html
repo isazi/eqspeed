@@ -1,23 +1,55 @@
-<!-- SuuntoPlus: Small display -->
 <uiView>
 
+  <!-- Exercise viewset (vs) subview -->
   <div id="suuntoplus">
 
-    <!-- Topmost: title field -->
-    <div class="cm-fg" style="width:100%;height:56px;">
-      <div id="z{zapp_index}-v{view_index}-t0" style="top:16px;left:calc(50% - 50%e);font-size:25px;max-height:34px;max-width:170px;">eqSPEED</div>
-    </div>
-
-     <!-- center -->
-     <div style="top:30%;left:2%;width:96%;height:34%;">
-      <div style="width:100%;height:100%;">
-      <div id="z-c-desc" class="f-xxs p-tc" style="top:calc(15% - 50%e);left:0px;width:100%;">
+    <!-- logo/title and its bg -->
+    <div class="cm-fg" style="width:100%;height:25%">
+      <div class="f-m p-hc" style="top:calc(60% - 50%e)">
         eqSPEED
       </div>
-      <div id="z-c-val" class="f-xl p-tc" style="top:calc(55% - 50%e);left:0px;width:100%;">
-        <eval input="/Zapp/{zapp_index}/Output/eqSPEED" outputFormat="Speed_Threedigits" default="--" />
+    </div>
+
+    <!-- vertical separator -->
+    <div class="cm-fg p-hc" style="top:34%;width:2px;height:30%;opacity:0.4"></div>
+
+    <!-- top -->
+    <uiViewSet>
+      <div>
+        <!-- left -->
+        <div class="f-xxs" style="top:calc(43% - 100%e);left:calc(26% - 50%e)">
+          {zapp_tl_title}
+        </div>
+        <div style="top:40%;left:calc(26% - 50%e)">
+          <span class="f-l f-num">
+            <eval input="{zapp_tl_input}" outputFormat="{zapp_tl_format}" default="--" />
+          </span>
+          <span id="z-unit1" class="f-xxs" style="padding:0 0 0 4px">
+            {zapp_tl_unit}
+          </span>
+        </div>
+
+        <!-- right -->
+        <div class="f-xxs" style="top:calc(43% - 100%e);left:calc(74% - 50%e)">
+          {zapp_tr_title}
+        </div>
+        <div style="top:40%;left:calc(74% - 50%e)">
+          <span class="f-l f-num">
+            <eval input="{zapp_tr_input}" outputFormat="{zapp_tr_format}" default="--" />
+          </span>
+          <span id="z-unit2" class="f-xxs" style="padding:0 0 0 4px">
+            {zapp_tr_unit}
+          </span>
+        </div>
       </div>
-      </div>
+    </uiViewSet>
+
+    <!-- bottom -->
+    <div class="f-xxs p-hc" style="top:calc(71% - 50%e)">
+      {zapp_bottom_title}
+    </div>
+    <div class="f-l f-num p-hc" style="top:calc(82% - 50%e)">
+      <eval input="{zapp_bottom_input}" outputFormat="{zapp_bottom_format}" default="--" />
     </div>
 
   </div>

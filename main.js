@@ -8,12 +8,14 @@ function evaluate(input, output)
     return;
   }
   output.eqSPEED = (((input.distance / 1000) + input.ascent) / 100) / (input.duration / 3600)
+  output.remaining_time = ((input.remaining_distance + input.remaining_ascent) / 100) / output.eqSPEED;
 }
 
 function onLoad(input, output)
 {
   isPaused = true;
   output.eqSPEED = 0.0;
+  output.remaining_time = 0;
 }
 
 function onExerciseStart()
@@ -34,7 +36,10 @@ function onExerciseContinue()
 function getUserInterface(info)
 {
   return {
-    template: 'template-{zapp_disp}'
+    template: 'template-{zapp_disp}',
+    tl: { input: 'output/eqSPEED', format: 'Speed_Threedigits', title: 'eqSPEED', unit: 'km/h' },
+    tr: { input: 'output/remaining_time', format: 'Duration_Fivedigits', title: 'Remaining Time', unit: '' },
+    bottom: { input: 'Activity/Move/-1/Distance/Current', format: 'Distance_Accurate', title: 'Distance'}
   };
 }
 
